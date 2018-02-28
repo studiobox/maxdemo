@@ -303,7 +303,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/dashboard/dashboard-view/dashboard-view.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"view-header\">\r\n    <header class=\"view-heading\">\r\n        <h2 class=\"view-title\">Dashboard</h2>\r\n        <small class=\"view-breadcrumb\">Dashboard</small>\r\n    </header>\r\n</section>"
+module.exports = "<dashboard-header [title]=\"headerTitle\" [data]=\"headerData\"></dashboard-header>"
 
 /***/ }),
 
@@ -325,6 +325,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var DashboardViewComponent = (function () {
     function DashboardViewComponent() {
+        this.headerTitle = 'Dashboard';
+        this.headerData = {
+            'Name': 'Dashboard',
+            'appCode': 'dashboard',
+            'status': 'enabled'
+        };
     }
     DashboardViewComponent.prototype.ngOnInit = function () {
     };
@@ -351,23 +357,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardModule", function() { return DashboardModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/esm5/common.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dashboard_routing_module__ = __webpack_require__("../../../../../src/app/dashboard/dashboard-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dashboard_home_dashboard_home_component__ = __webpack_require__("../../../../../src/app/dashboard/dashboard-home/dashboard-home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sla_metric_sla_metric_component__ = __webpack_require__("../../../../../src/app/dashboard/sla-metric/sla-metric.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__header_header_component__ = __webpack_require__("../../../../../src/app/dashboard/header/header.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__sidebar_sidebar_component__ = __webpack_require__("../../../../../src/app/dashboard/sidebar/sidebar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__dashboard_view_dashboard_view_component__ = __webpack_require__("../../../../../src/app/dashboard/dashboard-view/dashboard-view.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__sticker_sticker_component__ = __webpack_require__("../../../../../src/app/dashboard/sticker/sticker.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__chart_chart_component__ = __webpack_require__("../../../../../src/app/chart/chart.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ama_sticker__ = __webpack_require__("../../../../@ama/sticker/esm5/ama-sticker.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ama_grid__ = __webpack_require__("../../../../@ama/grid/esm5/ama-grid.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__sla_metric_sample_grid__ = __webpack_require__("../../../../../src/app/dashboard/sla-metric/sample-grid.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_highcharts__ = __webpack_require__("../../../../angular-highcharts/angular-highcharts.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__dashboard_routing_module__ = __webpack_require__("../../../../../src/app/dashboard/dashboard-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__dashboard_home_dashboard_home_component__ = __webpack_require__("../../../../../src/app/dashboard/dashboard-home/dashboard-home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__sla_metric_sla_metric_component__ = __webpack_require__("../../../../../src/app/dashboard/sla-metric/sla-metric.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__header_header_component__ = __webpack_require__("../../../../../src/app/dashboard/header/header.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__sidebar_sidebar_component__ = __webpack_require__("../../../../../src/app/dashboard/sidebar/sidebar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__dashboard_view_dashboard_view_component__ = __webpack_require__("../../../../../src/app/dashboard/dashboard-view/dashboard-view.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__sticker_sticker_component__ = __webpack_require__("../../../../../src/app/dashboard/sticker/sticker.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__chart_chart_component__ = __webpack_require__("../../../../../src/app/chart/chart.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__ama_dashboard_header__ = __webpack_require__("../../../../@ama/dashboard-header/esm5/ama-dashboard-header.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ama_sticker__ = __webpack_require__("../../../../@ama/sticker/esm5/ama-sticker.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ama_grid__ = __webpack_require__("../../../../@ama/grid/esm5/ama-grid.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__sla_metric_sample_grid__ = __webpack_require__("../../../../../src/app/dashboard/sla-metric/sample-grid.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -388,21 +398,23 @@ var DashboardModule = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
-                __WEBPACK_IMPORTED_MODULE_2__dashboard_routing_module__["a" /* DashboardRoutingModule */],
-                __WEBPACK_IMPORTED_MODULE_10__ama_sticker__["a" /* StickerModule */],
-                __WEBPACK_IMPORTED_MODULE_11__ama_grid__["a" /* AMATableModule */]
+                __WEBPACK_IMPORTED_MODULE_2_angular_highcharts__["a" /* ChartModule */],
+                __WEBPACK_IMPORTED_MODULE_3__dashboard_routing_module__["a" /* DashboardRoutingModule */],
+                __WEBPACK_IMPORTED_MODULE_11__ama_dashboard_header__["a" /* DashboardHeaderModule */],
+                __WEBPACK_IMPORTED_MODULE_12__ama_sticker__["a" /* StickerModule */],
+                __WEBPACK_IMPORTED_MODULE_13__ama_grid__["a" /* AMAGridModule */]
             ],
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_3__dashboard_home_dashboard_home_component__["a" /* DashboardHomeComponent */],
-                __WEBPACK_IMPORTED_MODULE_4__sla_metric_sla_metric_component__["a" /* SlaMetricComponent */],
-                __WEBPACK_IMPORTED_MODULE_5__header_header_component__["a" /* HeaderComponent */],
-                __WEBPACK_IMPORTED_MODULE_6__sidebar_sidebar_component__["a" /* SidebarComponent */],
-                __WEBPACK_IMPORTED_MODULE_7__dashboard_view_dashboard_view_component__["a" /* DashboardViewComponent */],
-                __WEBPACK_IMPORTED_MODULE_8__sticker_sticker_component__["a" /* StickerComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__chart_chart_component__["a" /* ChartComponent */]
+                __WEBPACK_IMPORTED_MODULE_4__dashboard_home_dashboard_home_component__["a" /* DashboardHomeComponent */],
+                __WEBPACK_IMPORTED_MODULE_5__sla_metric_sla_metric_component__["a" /* SlaMetricComponent */],
+                __WEBPACK_IMPORTED_MODULE_6__header_header_component__["a" /* HeaderComponent */],
+                __WEBPACK_IMPORTED_MODULE_7__sidebar_sidebar_component__["a" /* SidebarComponent */],
+                __WEBPACK_IMPORTED_MODULE_8__dashboard_view_dashboard_view_component__["a" /* DashboardViewComponent */],
+                __WEBPACK_IMPORTED_MODULE_9__sticker_sticker_component__["a" /* StickerComponent */],
+                __WEBPACK_IMPORTED_MODULE_10__chart_chart_component__["a" /* ChartComponent */]
             ],
             providers: [
-                __WEBPACK_IMPORTED_MODULE_12__sla_metric_sample_grid__["a" /* SampleGrid */]
+                __WEBPACK_IMPORTED_MODULE_14__sla_metric_sample_grid__["a" /* SampleGrid */]
             ]
         })
     ], DashboardModule);
@@ -766,7 +778,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/dashboard/sla-metric/sla-metric.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<section class=\"view-header\">\r\n    <header class=\"view-heading\">\r\n        <h2 class=\"view-title\">SLA Metric Dashboard</h2>\r\n        <small class=\"view-breadcrumb\"><a routerLink=\"/dashboard\">Dashboard</a></small> / <small class=\"view-breadcrumb\">SLA Metric</small>\r\n    </header>\r\n</section>\r\n\r\n<article class=\"container-fluid view-container\">\r\n    <div class=\"row\">\r\n        <!-- BLOCK SECTION -->\r\n        <ama-sticker\r\n            [title]=\"item.title\"\r\n            [link]=\"item.kibanaLink\"\r\n            [icon]=\"item.icon\"\r\n            [count]=\"item.count\"\r\n            [helpText]=\"item.helpText\"\r\n            [background]=\"item.background\"\r\n            *ngFor=\"let item of metricBlocks\">\r\n        </ama-sticker>\r\n        <!-- END OF BLOCK SECTION -->\r\n    </div>\r\n</article>\r\n\r\n<article class=\"container-fluid view-container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12 col-lg-12\">\r\n            <!-- TABLE SECTION -->\r\n            <ama-grid [config]=\"gridConfig\" (tableChanged)=\"onAuditLogChangeTable(gridConfig)\" \r\n            [rows]=\"gridRows\" [columns]=\"gridColumns\" [links]=\"gridLinks\" \r\n            [message]=\"gridMessage\">\r\n            </ama-grid>\r\n            <!-- END OF TABLE SECTION -->\r\n        </div>\r\n    </div>\r\n</article>\r\n\r\n<article class=\"container-fluid view-container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12 col-lg-12\">\r\n            <app-chart [seriesData]=\"data\"></app-chart>\r\n        </div>\r\n    </div>\r\n</article>"
+module.exports = "<dashboard-header [title]=\"headerTitle\" [data]=\"headerData\"></dashboard-header>\r\n\r\n<article class=\"container-fluid view-container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-md-2 col-lg-2 custom-gutter\" *ngFor=\"let item of metricBlocks\">\r\n            <!-- BLOCK SECTION -->\r\n            <ama-sticker\r\n                [title]=\"item.title\"\r\n                [link]=\"item.kibanaLink\"\r\n                [icon]=\"item.icon\"\r\n                [count]=\"item.count\"\r\n                [helpText]=\"item.helpText\"\r\n                [background]=\"item.background\">\r\n            </ama-sticker>\r\n            <!-- END OF BLOCK SECTION -->\r\n        </div>\r\n    </div>\r\n</article>\r\n\r\n<article class=\"container-fluid view-container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12 col-lg-12\">\r\n            <!-- TABLE SECTION -->\r\n            <section class=\"panel panel-default panel-basic\">\r\n                <header class=\"panel-heading\">\r\n                    <h4 class=\"panel-title\">SLA Departure Activity</h4>\r\n                </header>\r\n                \r\n                <ama-grid [config]=\"gridConfig\" (tableChanged)=\"onAuditLogChangeTable(gridConfig)\" \r\n                [rows]=\"gridRows\" [columns]=\"gridColumns\" [links]=\"gridLinks\" \r\n                [message]=\"gridMessage\">\r\n                </ama-grid>\r\n            </section>\r\n            <!-- END OF TABLE SECTION -->\r\n        </div>\r\n    </div>\r\n</article>\r\n\r\n<article class=\"container-fluid view-container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-md-12 col-lg-12\">\r\n            <app-chart [seriesData]=\"data\"></app-chart>\r\n        </div>\r\n    </div>\r\n</article>"
 
 /***/ }),
 
@@ -841,6 +853,12 @@ var SlaMetricComponent = (function () {
         this.modal = modal;
         this.ref = ref;
         this.sampleGrid = sampleGrid;
+        this.headerTitle = 'SLA Metric';
+        this.headerData = {
+            'Name': 'SLA Metric',
+            'appCode': 'sla',
+            'status': 'enabled'
+        };
         this.gridConfig = {};
         this.gridRows = [];
         this.gridColumns = [];
@@ -1210,11 +1228,67 @@ var StickerComponent = (function () {
 
 /***/ }),
 
+/***/ "../../../../@ama/dashboard-header/esm5/ama-dashboard-header.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardHeaderModule; });
+/* unused harmony export ɵa */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/esm5/common.js");
+
+
+
+var DashboardHeaderComponent = /** @class */ (function () {
+    function DashboardHeaderComponent() {
+    }
+    DashboardHeaderComponent.prototype.ngOnInit = function () {
+    };
+    return DashboardHeaderComponent;
+}());
+DashboardHeaderComponent.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
+                selector: 'dashboard-header',
+                template: "<section class=\"view-header\">\n  <header class=\"view-heading\">\n      <h2 class=\"view-title\">{{title}}</h2>\n      <small class=\"view-breadcrumb\"><a routerLink=\"/dashboard\">Dashboard</a></small> / <small class=\"view-breadcrumb\">{{data.Name}}</small>\n  </header>\n</section>",
+                styles: [".view-header{\n  padding:15px; }\n.view-heading{\n  overflow:hidden; }\n.view-title{\n  font-size:1.3rem;\n  margin:0;\n  margin-bottom:5px;\n  color:#092E5D; }\n.view-breadcrumb{\n  font-size:1.0rem; }\n.view-breadcrumb > a{\n  color:#004890;\n  font-weight:500; }\n"]
+            },] },
+];
+DashboardHeaderComponent.ctorParameters = function () { return []; };
+DashboardHeaderComponent.propDecorators = {
+    "title": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */] },],
+    "data": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */] },],
+};
+var DashboardHeaderModule = /** @class */ (function () {
+    function DashboardHeaderModule() {
+    }
+    return DashboardHeaderModule;
+}());
+DashboardHeaderModule.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */], args: [{
+                imports: [
+                    __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */]
+                ],
+                declarations: [
+                    DashboardHeaderComponent
+                ],
+                exports: [
+                    DashboardHeaderComponent
+                ]
+            },] },
+];
+DashboardHeaderModule.ctorParameters = function () { return []; };
+
+
+//# sourceMappingURL=ama-dashboard-header.js.map
+
+
+/***/ }),
+
 /***/ "../../../../@ama/grid/esm5/ama-grid.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AMATableModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AMAGridModule; });
 /* unused harmony export ɵa */
 /* unused harmony export ɵb */
 /* unused harmony export ɵc */
@@ -1226,8 +1300,8 @@ var StickerComponent = (function () {
 
 
 
-var AMATableComponent = (function () {
-    function AMATableComponent(sanitizer) {
+var AMAGridComponent = (function () {
+    function AMAGridComponent(sanitizer) {
         this.sanitizer = sanitizer;
         this.rows = [];
         this.links = {};
@@ -1243,7 +1317,7 @@ var AMATableComponent = (function () {
         this._columns = [];
         this._config = {};
     }
-    Object.defineProperty(AMATableComponent.prototype, "columns", {
+    Object.defineProperty(AMAGridComponent.prototype, "columns", {
         get: function () {
             return this._columns;
         },
@@ -1268,8 +1342,8 @@ var AMATableComponent = (function () {
         enumerable: true,
         configurable: true
     });
-    AMATableComponent.prototype.ngOnInit = function () { };
-    Object.defineProperty(AMATableComponent.prototype, "config", {
+    AMAGridComponent.prototype.ngOnInit = function () { };
+    Object.defineProperty(AMAGridComponent.prototype, "config", {
         get: function () {
             return this._config;
         },
@@ -1285,20 +1359,20 @@ var AMATableComponent = (function () {
         enumerable: true,
         configurable: true
     });
-    AMATableComponent.prototype.getWidth = function (cols) {
+    AMAGridComponent.prototype.getWidth = function (cols) {
         var columns = cols.length;
         if (this.links.isEdit || this.links.isDelete) {
             ++columns;
         }
         return 100 / columns;
     };
-    AMATableComponent.prototype.sanitize = function (html) {
+    AMAGridComponent.prototype.sanitize = function (html) {
         return this.sanitizer.bypassSecurityTrustHtml(html);
     };
-    AMATableComponent.prototype.getColumnData = function (row, columnName) {
+    AMAGridComponent.prototype.getColumnData = function (row, columnName) {
         return columnName.split('.').reduce(function (prev, cur) { return prev[cur]; }, row);
     };
-    Object.defineProperty(AMATableComponent.prototype, "configColumns", {
+    Object.defineProperty(AMAGridComponent.prototype, "configColumns", {
         get: function () {
             var sortColumns = [];
             this.columns.forEach(function (column) {
@@ -1311,7 +1385,7 @@ var AMATableComponent = (function () {
         enumerable: true,
         configurable: true
     });
-    AMATableComponent.prototype.onChangeTable = function (column) {
+    AMAGridComponent.prototype.onChangeTable = function (column) {
         console.log(' onChangeTable ama-grid ---> ', column);
         this._columns.forEach(function (col) {
             if (col.name !== column.name && col.sort !== false) {
@@ -1320,31 +1394,31 @@ var AMATableComponent = (function () {
         });
         this.tableChanged.emit({ sorting: this.configColumns });
     };
-    AMATableComponent.prototype.cellClick = function (row, column, index) {
+    AMAGridComponent.prototype.cellClick = function (row, column, index) {
         this.cellClicked.emit({ row: row, column: column, index: index });
     };
-    AMATableComponent.prototype.editClick = function (row, index) {
+    AMAGridComponent.prototype.editClick = function (row, index) {
         this.editClicked.emit({ row: row, index: index });
     };
-    AMATableComponent.prototype.onDateChange = function (value, columnName) {
+    AMAGridComponent.prototype.onDateChange = function (value, columnName) {
         this.dateChanged.emit({ value: value, columnName: columnName });
     };
-    AMATableComponent.prototype.deselectDate = function (columnName) {
+    AMAGridComponent.prototype.deselectDate = function (columnName) {
         this.dateDeselected.emit(columnName);
     };
-    return AMATableComponent;
+    return AMAGridComponent;
 }());
-AMATableComponent.decorators = [
+AMAGridComponent.decorators = [
     { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
                 selector: 'ama-grid',
-                template: "<div class=\"row\">\n    <div class=\"card card-block panel panel-body panel-default\">\n        <div class=\"inner_table\" [style.height.px]=\"height\">\n            <table ngClass=\"{{config.className || ''}}\" style=\"width:100%;table-layout:fixed;\">\n                <thead>\n                    <tr>\n                        <th *ngFor=\"let column of columns; let i = index\" [ngTableSorting]=\"_config\"\n                            [ngStyle]=\"{'text-align': column.align}\"\n                            (sortChanged)=\"onChangeTable($event)\" [column]=\"column\" [style.width.%]=\"getWidth(column)\">\n                            {{column.title}}\n                            <i *ngIf=\"column && _config && column.sort\" class=\"pull-right fa\"\n                                [ngClass]=\"{'fa-chevron-down':column.sort === 'desc', 'fa-chevron-up':column.sort === 'asc'}\">\n                            </i>\n                        </th>\n                    </tr>\n                </thead>\n                <tbody>\n                    <tr *ngIf=\"showFilterRow\">\n                        <td *ngFor=\"let column of columns; let i = index; let j = index\" [style.width.%]=\"getWidth(columns)\" class=\"defaultCusrsor\">\n                            <input *ngIf=\"column.filtering && (column.type === 'string' || column.type === 'number')\" placeholder=\"{{column.filtering.placeholder}}\"\n                                id=\"filteringString{{i}}\" [ngTableFiltering]=\"column.filtering\" value=\"{{column.filtering.filteringString}}\"\n                                class=\"form-control\" style=\"width: 100%;height: 25px;font-size: 10px;padding-right: 0px;padding-left: 5px;\" (tableChanged)=\"onChangeTable(config)\"/>\n                            <!-- <div *ngIf=\"column.filtering && column.type === 'date'\" style=\"position:relative;width:100%;\">\n                                <ng2-datepicker class=\"dateBox\" id=\"filteringDateString{{j}}\" [options]=\"options\" [(ngModel)]=\"date\" name=\"datePicker{{j}}\"\n                                    #datePicker=\"ngModel\" [ngTableFiltering]=\"column.filtering\" (ngModelChange)=\"onDateChange(date,column.name)\">\n                                </ng2-datepicker>\n                                <button type=\"button\" aria-label=\"Close\" class=\"close closeDeleteButton\" id=\"deleteDate{{j}}\" (click)=\"deselectDate(column.name)\">\n                                    <span aria-hidden=\"true\">&times;</span>\n                                </button>\n                            </div>   -->\n                        </td>\n                        <td *ngIf=\"links.isEdit || links.isDelete\" [style.width.%]=\"getWidth(columns)\" class=\"defaultCusrsor\"></td>\n                    </tr>\n                    <tr *ngFor=\"let row of rows; let i = index\" [class.active]=\"i==active\">\n                        <td (click)=\"cellClick(row, column.name, i)\" *ngFor=\"let column of columns\"\n                            [innerHtml]=\"sanitize(getColumnData(row, column.name))\"\n                            [style.width.%]=\"getWidth(columns)\">\n                        </td>\n                        <td *ngIf=\"links.isEdit || links.isDelete\" [style.width.%]=\"getWidth(columns)\" class=\"defaultCusrsor\">\n                            <div>\n                                <button *ngIf=\"links.isEdit\"\n                                    type=\"button\"\n                                    class=\"btn btn-xs btn-default\"\n                                    (click)=\"editClick(row,i)\">\n                                    <i class=\"fa fa-edit\"></i> Edit\n                                </button>\n                                <button *ngIf=\"links.isDelete\"\n                                    type=\"button\"\n                                    class=\"btn btn-xs btn-default\"\n                                    (click)=\"deleteClick(row,i)\"> Remove\n                                </button>\n                            </div>\n                        </td>\n                    </tr>\n                    <tr class=\"odd\" *ngIf=\"message.isMessage\">\n                        <td valign=\"top\" align=\"center\" [colSpan] = \"message.colspan\" class=\"dataTables_empty\">{{message.message}}</td>\n                    </tr>\n                </tbody>\n            </table>\n        </div>\n    </div>\n</div>",
+                template: "\n<div class=\"inner_table\">\n    <table ngClass=\"{{config.className || ''}}\" style=\"width:100%;table-layout:fixed;\">\n        <thead>\n            <tr>\n                <th *ngFor=\"let column of columns; let i = index\" [amaGridSorting]=\"_config\"\n                    [ngStyle]=\"{'text-align': column.align}\"\n                    (sortChanged)=\"onChangeTable($event)\" [column]=\"column\" [style.width.%]=\"getWidth(column)\">\n                    {{column.title}}\n                    <i *ngIf=\"column && _config && column.sort\" class=\"pull-right fa\"\n                        [ngClass]=\"{'fa-chevron-down':column.sort === 'desc', 'fa-chevron-up':column.sort === 'asc'}\">\n                    </i>\n                </th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr *ngIf=\"showFilterRow\">\n                <td *ngFor=\"let column of columns; let i = index; let j = index\" [style.width.%]=\"getWidth(columns)\" class=\"defaultCusrsor\">\n                    <input *ngIf=\"column.filtering && (column.type === 'string' || column.type === 'number')\" placeholder=\"{{column.filtering.placeholder}}\"\n                        id=\"filteringString{{i}}\" [amaGridFiltering]=\"column.filtering\" value=\"{{column.filtering.filteringString}}\"\n                        class=\"form-control\" style=\"width: 100%;height: 25px;font-size: 10px;padding-right: 0px;padding-left: 5px;\" (tableChanged)=\"onChangeTable(config)\"/>\n                    <!-- <div *ngIf=\"column.filtering && column.type === 'date'\" style=\"position:relative;width:100%;\">\n                        <ng2-datepicker class=\"dateBox\" id=\"filteringDateString{{j}}\" [options]=\"options\" [(ngModel)]=\"date\" name=\"datePicker{{j}}\"\n                            #datePicker=\"ngModel\" [amaGridFiltering]=\"column.filtering\" (ngModelChange)=\"onDateChange(date,column.name)\">\n                        </ng2-datepicker>\n                        <button type=\"button\" aria-label=\"Close\" class=\"close closeDeleteButton\" id=\"deleteDate{{j}}\" (click)=\"deselectDate(column.name)\">\n                            <span aria-hidden=\"true\">&times;</span>\n                        </button>\n                    </div>   -->\n                </td>\n                <td *ngIf=\"links.isEdit || links.isDelete\" [style.width.%]=\"getWidth(columns)\" class=\"defaultCusrsor\"></td>\n            </tr>\n            <tr *ngFor=\"let row of rows; let i = index\" [class.active]=\"i==active\">\n                <td (click)=\"cellClick(row, column.name, i)\" *ngFor=\"let column of columns\"\n                    [innerHtml]=\"sanitize(getColumnData(row, column.name))\"\n                    [style.width.%]=\"getWidth(columns)\">\n                </td>\n                <td *ngIf=\"links.isEdit || links.isDelete\" [style.width.%]=\"getWidth(columns)\" class=\"defaultCusrsor\">\n                    <div>\n                        <button *ngIf=\"links.isEdit\"\n                            type=\"button\"\n                            class=\"btn btn-xs btn-default\"\n                            (click)=\"editClick(row,i)\">\n                            <i class=\"fa fa-edit\"></i> Edit\n                        </button>\n                        <button *ngIf=\"links.isDelete\"\n                            type=\"button\"\n                            class=\"btn btn-xs btn-default\"\n                            (click)=\"deleteClick(row,i)\"> Remove\n                        </button>\n                    </div>\n                </td>\n            </tr>\n            <tr class=\"odd\" *ngIf=\"message.isMessage\">\n                <td valign=\"top\" align=\"center\" [colSpan] = \"message.colspan\" class=\"dataTables_empty\">{{message.message}}</td>\n            </tr>\n        </tbody>\n    </table>\n</div>",
                 styles: [".checkColor{\n    color:green;\n}\n.center{\n    margin-left:25%;\n}\n.glyphicon{\n    position:initial;\n}\n.glyphicon-remove.icon{\n    position:absolute;\n    top:10px;\n    left:86%;\n    font-size:larger;\n}\n.glyphicon-ok.icon{\n    color:#00ff00;\n    position:absolute;\n    top:10px;\n    left:86%;\n    font-size:larger;\n}\n.glyphicon-ok.icon-ok{\n    color:#00ff00;\n    font-size:larger;\n}\n.glyphicon-remove.icon-remove{\n    font-size:larger;\n}\ntd.glyphicon.glyphicon-remove.icon-remove.text-danger.center{\n    position:relative;\n    margin:0 auto;\n    text-align:center;\n    border:none;\n    left:42%;\n}\ntd.glyphicon.glyphicon-ok.icon-ok.center{\n    position:relative;\n    margin:0 auto;\n    text-align:center;\n    border:none;\n    left:42%;\n}\nspan.notification{\n    position:absolute;\n    padding:0px 5px 0px;\n    font-size:x-small;\n    left:12px;\n    bottom:4px;\n    z-index:1;\n    cursor:pointer;\n}\nspan.notification-danger{\n    background-color:#ed5565;\n    color:#FFFFFF;\n    border-radius:50%;\n}\nspan.notification-success{\n    background-color:#1ab394;;\n    color:#FFFFFF;\n    border-radius:50%;\n}\n input[type=image]:disabled{\n    opacity:0.5;\n}\n.isfault{\n    background-color:rgba(160, 0, 0, 0.2) !important;\n}\n.buildingImg{\n    width:22px;\n    margin-right:5px;\n    margin-bottom:9px;\n    cursor:pointer;\n}\n.buildingImgDashboard{\n     width:20px;\n     cursor:pointer;\n}\n.liftImg{\n    width:25px;\n    margin-right:5px;\n    margin-bottom:8px;\n    cursor:pointer;\n}\n.liftImgDashboard{\n    width:20px;\n    cursor:pointer;\n}\n.deviceImg{\n    width:28px;\n    margin-right:5px;\n    margin-bottom:10px;\n    cursor:pointer;\n}\n.deviceImgDashboard{\n    width:24px;\n    cursor:pointer;\n}\n.eventImg{\n    width:22px;\n    margin-bottom:10px;\n    cursor:pointer;\n}\n.drillDown{\n    width:15.3%;\n    text-align:center;\n}\n.icon{\n    margin-top:10px;\n    display:inline-block;\n    position:relative;\n    height:12px;\n}\n.icon > img{\n    position:absolute;\n    left:0px;\n    top:0px;\n}\ninputFilter{\n      width:80%;\n    height:25px;\n    font-size:10px;\n    padding-right:0px;\n    padding-left:5px;\n}\ntable.dataTable thead th, table.dataTable thead td{\n    padding:none !important;\n}\n.innerTable{\n    height:320px;\n    overflow:auto;\n}\n.normalWidth{\n width:15%;\n}\n.eventWidth{\n width:12%;\n}\nmy-dataTable{\n    width:100%;\n}\n.my-dataTable table{\n    width:100%;\n    table-layout:fixed;\n}\ntable tr{\n    cursor:pointer;\n}\ntable tr th{\n    padding:8px;\n    border:1px solid #eee;\n    width:100px;\n    word-wrap:break-word;\n}\ntable tr td{\n    padding:5px;\n    border:1px solid #eee;\n    width:100px;\n    word-wrap:break-word;\n}\ntable.head tr td{\n    background:#eee;\n    font-weight:600;\n    height:40px;\n}\n.inner_table{\n    overflow-y:auto;\n    margin-bottom:0px;\n}\n.table-fixed{\n    table-layout:fixed;\n}\n.closeDeleteButton{\n    position:absolute;\n    top:1px;\n    right:3%;\n}\ntable td.defaultCusrsor{\n    cursor:default !important;\n}\n.panel-default{\n    padding-top:0px;\n    padding-bottom:0px;\n}\n"]
             },] },
 ];
-AMATableComponent.ctorParameters = function () { return [
+AMAGridComponent.ctorParameters = function () { return [
     { type: __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["b" /* DomSanitizer */], },
 ]; };
-AMATableComponent.propDecorators = {
+AMAGridComponent.propDecorators = {
     "rows": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */] },],
     "links": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */] },],
     "gridData": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */] },],
@@ -1362,97 +1436,97 @@ AMATableComponent.propDecorators = {
 function setProperty(renderer, elementRef, propName, propValue) {
     renderer.setElementProperty(elementRef, propName, propValue);
 }
-var NgTableFilteringDirective = (function () {
-    function NgTableFilteringDirective(element, renderer) {
-        this.ngTableFiltering = {
+var AMAGridFilteringDirective = (function () {
+    function AMAGridFilteringDirective(element, renderer) {
+        this.amaGridFiltering = {
             filterString: '',
             columnName: 'name'
         };
         this.tableChanged = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */]();
         this.element = element;
         this.renderer = renderer;
-        setProperty(this.renderer, this.element, 'value', this.ngTableFiltering.filterString);
+        setProperty(this.renderer, this.element, 'value', this.amaGridFiltering.filterString);
     }
-    Object.defineProperty(NgTableFilteringDirective.prototype, "config", {
+    Object.defineProperty(AMAGridFilteringDirective.prototype, "config", {
         get: function () {
-            return this.ngTableFiltering;
+            return this.amaGridFiltering;
         },
         set: function (value) {
-            this.ngTableFiltering = value;
+            this.amaGridFiltering = value;
         },
         enumerable: true,
         configurable: true
     });
-    NgTableFilteringDirective.prototype.onChangeFilter = function (event) {
-        this.ngTableFiltering.filterString = event;
-        this.tableChanged.emit({ filtering: this.ngTableFiltering });
+    AMAGridFilteringDirective.prototype.onChangeFilter = function (event) {
+        this.amaGridFiltering.filterString = event;
+        this.tableChanged.emit({ filtering: this.amaGridFiltering });
     };
-    return NgTableFilteringDirective;
+    return AMAGridFilteringDirective;
 }());
-NgTableFilteringDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* Directive */], args: [{ selector: '[ngTableFiltering]' },] },
+AMAGridFilteringDirective.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* Directive */], args: [{ selector: '[amaGridFiltering]' },] },
 ];
-NgTableFilteringDirective.ctorParameters = function () { return [
+AMAGridFilteringDirective.ctorParameters = function () { return [
     { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["t" /* ElementRef */], },
     { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["W" /* Renderer */], },
 ]; };
-NgTableFilteringDirective.propDecorators = {
-    "ngTableFiltering": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */] },],
+AMAGridFilteringDirective.propDecorators = {
+    "amaGridFiltering": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */] },],
     "tableChanged": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Output */] },],
     "config": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */] },],
     "onChangeFilter": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["y" /* HostListener */], args: ['input', ['$event.target.value'],] },],
 };
-var NgTablePagingDirective = (function () {
-    function NgTablePagingDirective() {
-        this.ngTablePaging = true;
+var AMAGridPagingDirective = (function () {
+    function AMAGridPagingDirective() {
+        this.amaGridPaging = true;
         this.tableChanged = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */]();
     }
-    Object.defineProperty(NgTablePagingDirective.prototype, "config", {
+    Object.defineProperty(AMAGridPagingDirective.prototype, "config", {
         get: function () {
-            return this.ngTablePaging;
+            return this.amaGridPaging;
         },
         set: function (value) {
-            this.ngTablePaging = value;
+            this.amaGridPaging = value;
         },
         enumerable: true,
         configurable: true
     });
-    NgTablePagingDirective.prototype.onChangePage = function (event) {
-        if (this.ngTablePaging) {
+    AMAGridPagingDirective.prototype.onChangePage = function (event) {
+        if (this.amaGridPaging) {
             this.tableChanged.emit({ paging: event });
         }
     };
-    return NgTablePagingDirective;
+    return AMAGridPagingDirective;
 }());
-NgTablePagingDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* Directive */], args: [{ selector: '[ngTablePaging]' },] },
+AMAGridPagingDirective.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* Directive */], args: [{ selector: '[amaGridPaging]' },] },
 ];
-NgTablePagingDirective.ctorParameters = function () { return []; };
-NgTablePagingDirective.propDecorators = {
-    "ngTablePaging": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */] },],
+AMAGridPagingDirective.ctorParameters = function () { return []; };
+AMAGridPagingDirective.propDecorators = {
+    "amaGridPaging": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */] },],
     "tableChanged": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Output */] },],
     "config": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */] },],
     "onChangePage": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["y" /* HostListener */], args: ['pagechanged', ['$event'],] },],
 };
-var NgTableSortingDirective = (function () {
-    function NgTableSortingDirective() {
+var AMAGridSortingDirective = (function () {
+    function AMAGridSortingDirective() {
         this.sortChanged = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */]();
     }
-    Object.defineProperty(NgTableSortingDirective.prototype, "config", {
+    Object.defineProperty(AMAGridSortingDirective.prototype, "config", {
         get: function () {
-            return this.ngTableSorting;
+            return this.amaGridSorting;
         },
         set: function (value) {
-            this.ngTableSorting = value;
+            this.amaGridSorting = value;
         },
         enumerable: true,
         configurable: true
     });
-    NgTableSortingDirective.prototype.onToggleSort = function (event) {
+    AMAGridSortingDirective.prototype.onToggleSort = function (event) {
         if (event) {
             event.preventDefault();
         }
-        if (this.ngTableSorting && this.column && this.column.sort !== false) {
+        if (this.amaGridSorting && this.column && this.column.sort !== false) {
             switch (this.column.sort) {
                 case 'asc':
                     this.column.sort = 'desc';
@@ -1467,32 +1541,32 @@ var NgTableSortingDirective = (function () {
             this.sortChanged.emit(this.column);
         }
     };
-    return NgTableSortingDirective;
+    return AMAGridSortingDirective;
 }());
-NgTableSortingDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* Directive */], args: [{ selector: '[ngTableSorting]' },] },
+AMAGridSortingDirective.decorators = [
+    { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["s" /* Directive */], args: [{ selector: '[amaGridSorting]' },] },
 ];
-NgTableSortingDirective.ctorParameters = function () { return []; };
-NgTableSortingDirective.propDecorators = {
-    "ngTableSorting": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */] },],
+AMAGridSortingDirective.ctorParameters = function () { return []; };
+AMAGridSortingDirective.propDecorators = {
+    "amaGridSorting": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */] },],
     "column": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */] },],
     "sortChanged": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["P" /* Output */] },],
     "config": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */] },],
     "onToggleSort": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["y" /* HostListener */], args: ['click', ['$event'],] },],
 };
-var AMATableModule = (function () {
-    function AMATableModule() {
+var AMAGridModule = (function () {
+    function AMAGridModule() {
     }
-    return AMATableModule;
+    return AMAGridModule;
 }());
-AMATableModule.decorators = [
+AMAGridModule.decorators = [
     { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */], args: [{
                 imports: [__WEBPACK_IMPORTED_MODULE_2__angular_common__["b" /* CommonModule */]],
-                declarations: [AMATableComponent, NgTableFilteringDirective, NgTablePagingDirective, NgTableSortingDirective],
-                exports: [AMATableComponent, NgTableFilteringDirective, NgTablePagingDirective, NgTableSortingDirective]
+                declarations: [AMAGridComponent, AMAGridFilteringDirective, AMAGridPagingDirective, AMAGridSortingDirective],
+                exports: [AMAGridComponent, AMAGridFilteringDirective, AMAGridPagingDirective, AMAGridSortingDirective]
             },] },
 ];
-AMATableModule.ctorParameters = function () { return []; };
+AMAGridModule.ctorParameters = function () { return []; };
 
 
 //# sourceMappingURL=ama-grid.js.map
@@ -1510,27 +1584,20 @@ AMATableModule.ctorParameters = function () { return []; };
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/esm5/common.js");
 
 
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
+
 var StickerComponent = (function () {
     function StickerComponent() {
     }
-    /**
-     * @return {?}
-     */
     StickerComponent.prototype.ngOnInit = function () { };
     return StickerComponent;
 }());
 StickerComponent.decorators = [
     { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */], args: [{
                 selector: 'ama-sticker',
-                template: "<div class=\"col-lg-2 col-md-3 col-sm-3 col ama-sticker\">\n    <section class=\"panel panel-default stickers\" [ngClass]=\"{'colored': background !== ''}\" [style.background-color]=\"background\">\n        <header class=\"panel-heading\">\n            <h4 class=\"panel-title pull-left\"><i class=\"glyphicon {{icon}}\"></i> {{ title }}</h4>\n            <!-- <span class=\"panel-title-count pull-right\">4,598</span> -->\n        </header>\n        <summary class=\"panel-body\">\n            <span class=\"sticker-count\">{{ count }}</span>\n            <p class=\"sticker-help-text\">{{ helpText }}</p>\n        </summary>\n    </section>\n</div>    ",
-                styles: [".ama-sticker{\n    padding-left:0px;\n    padding-right:0px;\n}\n.ama-sticker:first-child{\n    padding-left:10px;\n}\n.ama-sticker:last-child{\n    padding-right:10px;\n}\n.stickers{\n    -webkit-transition:border .3s ease-in-out;\n    transition:border .3s ease-in-out;\n}\n.stickers.colored{\n    color:#fff;\n}\n.stickers:hover{\n    border-color:rgba(0,0,0,.4);\n}\n.stickers > .panel-heading{\n    background:none;\n    border:none;\n    padding-top:20px;\n    overflow:hidden;\n}\n.stickers .panel-title{\n    padding-top:5px;\n}\n.stickers.colored .panel-title{\n    color:#fff;\n}\n.stickers .panel-title > .glyphicon{\n    margin-right:5px;\n}\n.panel-title-count{\n    font-size:2rem;\n    font-weight:500;\n}\n.panel-body{\n    padding-top:0;\n}\n.sticker-count{\n    display:block;\n    text-align:center;\n    font-size:2rem;\n    font-weight:500;\n}\n.sticker-help-text{\n    text-align:center;\n    font-size:1.3rem;\n}"]
+                template: "<section class=\"panel panel-default stickers\" [ngClass]=\"{'colored': background !== ''}\" [style.background-color]=\"background\">\n    <header class=\"panel-heading\">\n        <h4 class=\"panel-title pull-left\"><i class=\"glyphicon {{icon}}\"></i> {{ title }}</h4>\n        <!-- <span class=\"panel-title-count pull-right\">4,598</span> -->\n    </header>\n    <summary class=\"panel-body\">\n        <span class=\"sticker-count\">{{ count }}</span>\n        <p class=\"sticker-help-text\">{{ helpText }}</p>\n    </summary>\n</section>\n  ",
+                styles: [".stickers{\n    -webkit-transition:border .3s ease-in-out;\n    transition:border .3s ease-in-out;\n}\n.stickers.colored{\n    color:#fff;\n}\n.stickers:hover{\n    border-color:rgba(0,0,0,.4);\n}\n.stickers > .panel-heading{\n    background:none;\n    border:none;\n    padding-top:20px;\n    overflow:hidden;\n}\n.stickers .panel-title{\n    padding-top:5px;\n}\n.stickers.colored .panel-title{\n    color:#fff;\n}\n.stickers .panel-title > .glyphicon{\n    margin-right:5px;\n}\n.panel-title-count{\n    font-size:2rem;\n    font-weight:500;\n}\n.panel-body{\n    padding-top:0;\n}\n.sticker-count{\n    display:block;\n    text-align:center;\n    font-size:2rem;\n    font-weight:500;\n}\n.sticker-help-text{\n    text-align:center;\n    font-size:1.3rem;\n}"]
             },] },
 ];
-/** @nocollapse */
 StickerComponent.ctorParameters = function () { return []; };
 StickerComponent.propDecorators = {
     "title": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */] },],
@@ -1540,10 +1607,6 @@ StickerComponent.propDecorators = {
     "helpText": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */] },],
     "background": [{ type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */] },],
 };
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
 var StickerModule = (function () {
     function StickerModule() {
     }
@@ -1562,21 +1625,364 @@ StickerModule.decorators = [
                 ]
             },] },
 ];
-/** @nocollapse */
 StickerModule.ctorParameters = function () { return []; };
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes} checked by tsc
- */
-/**
- * Generated bundle index. Do not edit.
- */
+
 
 //# sourceMappingURL=ama-sticker.js.map
+
+
+/***/ }),
+
+/***/ "../../../../angular-highcharts/angular-highcharts.es5.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChartModule; });
+/* unused harmony export HIGHCHARTS_MODULES */
+/* unused harmony export Chart */
+/* unused harmony export StockChart */
+/* unused harmony export MapChart */
+/* unused harmony export ɵb */
+/* unused harmony export ɵa */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_highcharts__ = __webpack_require__("../../../../highcharts/highcharts.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_highcharts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_highcharts__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* unused harmony reexport Highcharts */
+
+
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+var Chart = /** @class */ (function () {
+    function Chart(options) {
+        if (options === void 0) { options = { series: [] }; }
+        // init series array if not set
+        if (!options.series) {
+            options.series = [];
+        }
+        this.options = options;
+    }
+    Object.defineProperty(Chart.prototype, "options", {
+        get: /**
+         * @return {?}
+         */
+        function () {
+            if (this.ref) {
+                return this.ref.options;
+            }
+            return this._options;
+        },
+        set: /**
+         * @param {?} value
+         * @return {?}
+         */
+        function (value) {
+            this._options = value;
+            if (this.ref) {
+                this.ref.update(value);
+            }
+        },
+        enumerable: true,
+        configurable: true
+    });
+    /**
+     * Add Point
+     * \@memberof Chart
+     * @param {?} point         Highcharts.DataPoint, number touple or number
+     * @param {?=} serieIndex    Index position of series. This defaults to 0.
+     * @param {?=} redraw        Flag whether or not to redraw point. This defaults to true.
+     * @param {?=} shift         Shift point to the start of series. This defaults to false.
+     * @return {?}
+     */
+    Chart.prototype.addPoint = /**
+     * Add Point
+     * \@memberof Chart
+     * @param {?} point         Highcharts.DataPoint, number touple or number
+     * @param {?=} serieIndex    Index position of series. This defaults to 0.
+     * @param {?=} redraw        Flag whether or not to redraw point. This defaults to true.
+     * @param {?=} shift         Shift point to the start of series. This defaults to false.
+     * @return {?}
+     */
+    function (point, serieIndex, redraw, shift) {
+        if (serieIndex === void 0) { serieIndex = 0; }
+        if (redraw === void 0) { redraw = true; }
+        if (shift === void 0) { shift = false; }
+        if (this.ref && this.ref.series.length > serieIndex) {
+            this.ref.series[serieIndex].addPoint(point, redraw, shift);
+            return;
+        }
+        // keep options in snyc if chart is not initialized
+        if (this.options.series.length > serieIndex) {
+            this.options.series[serieIndex].data.push(point);
+        }
+    };
+    /**
+     * Add Series
+     * \@memberof Chart
+     * @param {?} serie         Series Configuration
+     * @param {?=} redraw        Flag whether or not to redraw series. This defaults to true.
+     * @param {?=} animation     Whether to apply animation, and optionally animation configuration. This defaults to false.
+     * @return {?}
+     */
+    Chart.prototype.addSerie = /**
+     * Add Series
+     * \@memberof Chart
+     * @param {?} serie         Series Configuration
+     * @param {?=} redraw        Flag whether or not to redraw series. This defaults to true.
+     * @param {?=} animation     Whether to apply animation, and optionally animation configuration. This defaults to false.
+     * @return {?}
+     */
+    function (serie, redraw, animation) {
+        if (redraw === void 0) { redraw = true; }
+        if (animation === void 0) { animation = false; }
+        if (this.ref) {
+            this.ref.addSeries(serie, redraw, animation);
+            return;
+        }
+        // keep options in snyc if chart is not initialized
+        this.options.series.push(serie);
+    };
+    /**
+     * Remove Point
+     * \@memberof Chart
+     * @param {?} pointIndex    Index of Point
+     * @param {?=} serieIndex    Specified Index of Series. Defaults to 0.
+     * @return {?}
+     */
+    Chart.prototype.removePoint = /**
+     * Remove Point
+     * \@memberof Chart
+     * @param {?} pointIndex    Index of Point
+     * @param {?=} serieIndex    Specified Index of Series. Defaults to 0.
+     * @return {?}
+     */
+    function (pointIndex, serieIndex) {
+        if (serieIndex === void 0) { serieIndex = 0; }
+        if (this.ref &&
+            this.ref.series.length > serieIndex &&
+            this.ref.series[serieIndex].data.length > pointIndex) {
+            this.ref.series[serieIndex].removePoint(pointIndex, true);
+            return;
+        }
+        // keep options in snyc if chart is not initialized
+        if (this.options.series.length > serieIndex &&
+            this.options.series[serieIndex].data.length > pointIndex) {
+            this.options.series[serieIndex].data.splice(pointIndex, 1);
+        }
+    };
+    /**
+     * Remove Series
+     * \@memberof Chart
+     * @param {?} serieIndex    Index position of series to remove.
+     * @return {?}
+     */
+    Chart.prototype.removeSerie = /**
+     * Remove Series
+     * \@memberof Chart
+     * @param {?} serieIndex    Index position of series to remove.
+     * @return {?}
+     */
+    function (serieIndex) {
+        if (this.ref && this.ref.series.length > serieIndex) {
+            this.ref.series[serieIndex].remove(true);
+            return;
+        }
+        // keep options in snyc if chart is not initialized
+        if (this.options.series.length > serieIndex) {
+            this.options.series.splice(serieIndex, 1);
+        }
+    };
+    return Chart;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+var MapChart = /** @class */ (function () {
+    function MapChart(options) {
+        this.options = options;
+    }
+    return MapChart;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+var StockChart = /** @class */ (function () {
+    function StockChart(options) {
+        if (options === void 0) { options = { series: [] }; }
+        this.options = options;
+    }
+    return StockChart;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+var ChartDirective = /** @class */ (function () {
+    function ChartDirective(el) {
+        this.el = el;
+    }
+    /**
+     * @param {?} changes
+     * @return {?}
+     */
+    ChartDirective.prototype.ngOnChanges = /**
+     * @param {?} changes
+     * @return {?}
+     */
+    function (changes) {
+        if (!changes["chart"].isFirstChange()) {
+            this.destroy();
+            this.init();
+        }
+    };
+    /**
+     * @return {?}
+     */
+    ChartDirective.prototype.ngOnInit = /**
+     * @return {?}
+     */
+    function () {
+        this.init();
+    };
+    /**
+     * @return {?}
+     */
+    ChartDirective.prototype.ngOnDestroy = /**
+     * @return {?}
+     */
+    function () {
+        this.destroy(true);
+    };
+    /**
+     * @return {?}
+     */
+    ChartDirective.prototype.init = /**
+     * @return {?}
+     */
+    function () {
+        if (this.chart instanceof Chart) {
+            return this.chart.ref = __WEBPACK_IMPORTED_MODULE_0_highcharts__["chart"](this.el.nativeElement, this.chart.options);
+        }
+        if (this.chart instanceof StockChart) {
+            return this.chart.ref = __WEBPACK_IMPORTED_MODULE_0_highcharts__["stockChart"](this.el.nativeElement, this.chart.options);
+        }
+        if (this.chart instanceof MapChart) {
+            return this.chart.ref = __WEBPACK_IMPORTED_MODULE_0_highcharts__["mapChart"](this.el.nativeElement, this.chart.options);
+        }
+    };
+    /**
+     * @param {?=} sync
+     * @return {?}
+     */
+    ChartDirective.prototype.destroy = /**
+     * @param {?=} sync
+     * @return {?}
+     */
+    function (sync) {
+        if (sync === void 0) { sync = false; }
+        if (this.chart && this.chart.ref) {
+            if (sync) {
+                this.chart.options = this.chart.ref.options;
+            }
+            this.chart.ref.destroy();
+            delete this.chart.ref;
+        }
+    };
+    ChartDirective.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["s" /* Directive */], args: [{
+                    selector: '[chart]'
+                },] },
+    ];
+    /** @nocollapse */
+    ChartDirective.ctorParameters = function () { return [
+        { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["t" /* ElementRef */], },
+    ]; };
+    ChartDirective.propDecorators = {
+        "chart": [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["D" /* Input */] },],
+    };
+    return ChartDirective;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+var /** @type {?} */ HIGHCHARTS_MODULES = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* InjectionToken */]('HighchartsModules');
+var ChartService = /** @class */ (function () {
+    function ChartService(chartModules) {
+        this.chartModules = chartModules;
+    }
+    /**
+     * @return {?}
+     */
+    ChartService.prototype.initModules = /**
+     * @return {?}
+     */
+    function () {
+        this.chartModules.forEach(function (chartModule) {
+            chartModule(__WEBPACK_IMPORTED_MODULE_0_highcharts__);
+        });
+    };
+    ChartService.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */] },
+    ];
+    /** @nocollapse */
+    ChartService.ctorParameters = function () { return [
+        { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["z" /* Inject */], args: [HIGHCHARTS_MODULES,] },] },
+    ]; };
+    return ChartService;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+var ɵ0 = [];
+var ChartModule = /** @class */ (function () {
+    function ChartModule(cs) {
+        this.cs = cs;
+        this.cs.initModules();
+    }
+    ChartModule.decorators = [
+        { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */], args: [{
+                    exports: [ChartDirective],
+                    declarations: [ChartDirective],
+                    providers: [
+                        { provide: HIGHCHARTS_MODULES, useValue: ɵ0 },
+                        ChartService
+                    ]
+                },] },
+    ];
+    /** @nocollapse */
+    ChartModule.ctorParameters = function () { return [
+        { type: ChartService, },
+    ]; };
+    return ChartModule;
+}());
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes} checked by tsc
+ */
+
+
 
 
 /***/ }),
