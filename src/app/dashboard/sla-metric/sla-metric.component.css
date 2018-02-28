@@ -1,0 +1,55 @@
+.view-header {
+    padding: 15px;
+}
+
+.view-heading {
+    overflow: hidden;
+}
+
+.view-title {
+    font-size: 2.2rem;
+    margin: 0;
+    margin-bottom: 5px;
+    color: #092E5D;
+}
+
+.view-breadcrumb {
+    font-size: 1.5rem;
+}
+
+.view-breadcrumb > a {
+    color: #004890;
+    font-weight: 500;
+}
+
+.panel-basic > .panel-heading {
+    background: none;
+    /* border: none; */
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+.panel-basic > .panel-heading > .panel-title {
+    color: #092E5D;
+    font-weight: 600;
+}
+
+/* .panel-basic > .table {
+    border-top: 1px solid #ddd;
+} */
+
+.panel-basic > .table > thead > tr > th {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.panel-basic > .table > tbody > tr > td,
+.table-striped > tbody > tr > td {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+}

@@ -1,0 +1,17 @@
+.view-header {
+    padding: 15px;
+}
+
+.view-heading {
+    overflow: hidden;
+}
+
+.view-title {
+    font-size: 2.2rem;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+.view-breadcrumb {
+    font-size: 1.5rem;
+}

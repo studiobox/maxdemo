@@ -1,0 +1,45 @@
+<dashboard-header [title]="headerTitle" [data]="headerData"></dashboard-header>
+
+<article class="container-fluid view-container">
+    <div class="row">
+        <div class="col-md-2 col-lg-2 custom-gutter" *ngFor="let item of metricBlocks">
+            <!-- BLOCK SECTION -->
+            <ama-sticker
+                [title]="item.title"
+                [link]="item.kibanaLink"
+                [icon]="item.icon"
+                [count]="item.count"
+                [helpText]="item.helpText"
+                [background]="item.background">
+            </ama-sticker>
+            <!-- END OF BLOCK SECTION -->
+        </div>
+    </div>
+</article>
+
+<article class="container-fluid view-container">
+    <div class="row">
+        <div class="col-md-12 col-lg-12">
+            <!-- TABLE SECTION -->
+            <section class="panel panel-default panel-basic">
+                <header class="panel-heading">
+                    <h4 class="panel-title">SLA Departure Activity</h4>
+                </header>
+                
+                <ama-grid [config]="gridConfig" (tableChanged)="onAuditLogChangeTable(gridConfig)" 
+                [rows]="gridRows" [columns]="gridColumns" [links]="gridLinks" 
+                [message]="gridMessage">
+                </ama-grid>
+            </section>
+            <!-- END OF TABLE SECTION -->
+        </div>
+    </div>
+</article>
+
+<article class="container-fluid view-container">
+    <div class="row">
+        <div class="col-md-12 col-lg-12">
+            <app-chart [seriesData]="data"></app-chart>
+        </div>
+    </div>
+</article>

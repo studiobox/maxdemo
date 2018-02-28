@@ -1,0 +1,56 @@
+.stickers {
+    -webkit-transition: border .3s ease-in-out;
+    -moz-transition: border .3s ease-in-out;
+    -o-transition: border .3s ease-in-out;
+    -ms-transition: border .3s ease-in-out;
+    transition: border .3s ease-in-out;
+}
+
+.stickers.colored {
+    color: #fff;
+}
+
+.stickers:hover {
+    /* border-color: #1bc191; */
+    border-color: rgba(0,0,0,.4);
+}
+
+.stickers > .panel-heading {
+    background: none;
+    border: none;
+    padding-top: 20px;
+    overflow: hidden;
+}
+
+.stickers .panel-title {
+    padding-top: 5px;
+}
+
+.stickers.colored .panel-title {
+    color: #fff;
+}
+
+.stickers .panel-title > .glyphicon {
+    margin-right: 5px;
+}
+
+.panel-title-count {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.panel-body {
+    padding-top: 0;
+}
+
+.sticker-count {
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.sticker-help-text {
+    text-align: center;
+    font-size: 1.3rem;
+}

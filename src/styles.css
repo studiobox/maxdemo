@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow:400,400i,500,500i,600,600i700,700i');
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Barlow', sans-serif;
+    /* font-size: 14px; */
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #333;
+    background-color: #efefef;
+    padding-top: 51px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
+}
+
+th {
+    font-weight: 500;
+}
+
+label, input {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+}
+
+.content-container {
+    height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    /* padding-left: 15px;
+    padding-right: 15px; */
+}
+
+.custom-gutter:first-child {
+    padding-left: 15px;
+}
+
+.custom-gutter:last-child {
+    padding-right: 15px;
+}
+
+.custom-gutter {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.view-title {
+    font-size: 2rem!important;
+}
+
+.view-breadcrumb {
+    font-size: 1.6rem!important;
+}

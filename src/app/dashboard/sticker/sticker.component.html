@@ -1,0 +1,10 @@
+<section class="panel panel-default stickers" [ngClass]="{'colored': background !== ''}" [style.background-color]="background">
+    <header class="panel-heading">
+        <h4 class="panel-title pull-left"><i class="glyphicon {{icon}}"></i> {{ title }}</h4>
+        <!-- <span class="panel-title-count pull-right">4,598</span> -->
+    </header>
+    <summary class="panel-body">
+        <span class="sticker-count">{{ count }}</span>
+        <p class="sticker-help-text">{{ helpText }}</p>
+    </summary>
+</section>

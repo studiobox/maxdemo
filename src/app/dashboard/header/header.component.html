@@ -1,0 +1,86 @@
+<div class="header">
+  <nav class="navbar navbar-default navbar-fixed-top ama-header">
+    <!-- LOGO SECTION -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <h1>Activity Monitoring &amp; Analytics</h1>
+      </a>
+    </div>
+    <!-- END OF LOGO SECTION -->
+
+    <!-- COLLAPSIBLE ICON SECTION -->
+    <span class="glyphicon glyphicon-align-justify collapsible-icon" (click)="menuCollapse()"></span>
+    <!-- END OF COLLAPSIBLE ICON SECTION -->
+
+    <!-- HEADER NAV SECTION -->
+    <ul class="nav navbar-nav navbar-right header-nav">
+      <li>
+        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="false">
+          <i class="glyphicon glyphicon-bell"></i>
+        </a>
+        <ul class="dropdown-menu alerts-dropdown">
+          <li class="alert-item danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" data-placement="right">
+            <div class="alert-heading">
+              <h5 class="alert-title pull-left">Component Title</h5>
+              <span class="alert-time pull-right">11:33 AM</span>
+            </div>
+            <div class="alert-body">
+              <p>Pellentesque habitant morbi tristique senectus...</p>
+            </div>
+          </li>
+          <li class="alert-item warning">
+            <div class="alert-heading">
+              <h5 class="alert-title pull-left">Component Title</h5>
+              <span class="alert-time pull-right">11:33 AM</span>
+            </div>
+            <div class="alert-body">
+              <p>Pellentesque habitant morbi tristique senectus...</p>
+            </div>
+          </li>
+          <li class="alert-item warning">
+            <div class="alert-heading">
+              <h5 class="alert-title pull-left">Component Title</h5>
+              <span class="alert-time pull-right">11:33 AM</span>
+            </div>
+            <div class="alert-body">
+              <p>Pellentesque habitant morbi tristique senectus...</p>
+            </div>
+          </li>
+          <li class="alert-item danger">
+            <div class="alert-heading">
+              <h5 class="alert-title pull-left">Component Title</h5>
+              <span class="alert-time pull-right">11:33 AM</span>
+            </div>
+            <div class="alert-body">
+              <p>Pellentesque habitant morbi tristique senectus...</p>
+            </div>
+          </li>
+          <li class="alert-item danger">
+            <div class="alert-heading">
+              <h5 class="alert-title pull-left">Component Title</h5>
+              <span class="alert-time pull-right">11:33 AM</span>
+            </div>
+            <div class="alert-body">
+              <p>Pellentesque habitant morbi tristique senectus...</p>
+            </div>
+          </li>
+          <button class="btn btn-default btn-block" (click)="alertsModal()">View All</button>
+        </ul>
+      </li>
+      <li><a href="#"><i class="glyphicon glyphicon-cog"></i></a></li>
+      <li>
+        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="false" aria-expanded="false">
+          <i class="glyphicon glyphicon-user"></i>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="#"><i class="glyphicon glyphicon-cog"></i> Preferences</a></li>
+          <li><a href="#"><i class="glyphicon glyphicon-envelope"></i> Contact Support</a></li>
+          <li class="divider"></li>
+          <li><a href="#"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- END OF HEADER NAV SECTION -->
+  </nav>
+</div>

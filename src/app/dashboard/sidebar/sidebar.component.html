@@ -1,0 +1,11 @@
+<!-- SIDEBAR MENU SECTION -->
+<div class="sidebar-menu" [ngClass]="{'collapsed': globals.menuCollapsed}">
+  <ul class="nav nav-pills nav-stacked">
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a routerLink="/dashboard"><i class="glyphicon glyphicon-th-large"></i><span class="menu-text">Dashboard</span></a></li>
+    <li routerLinkActive="active">
+      <a routerLink="sla-metric"><i class="glyphicon glyphicon-hdd"></i><span class="menu-text">SLA Metric</span></a>
+    </li>
+  </ul>
+</div>
+
+<!-- END OF SIDEBAR MENU SECTION -->

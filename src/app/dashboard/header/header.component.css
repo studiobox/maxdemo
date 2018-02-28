@@ -1,0 +1,114 @@
+.ama-header {
+    background-color: #092E5D;
+    color: #fff;
+    min-height: 0;
+}
+
+.navbar-brand{
+    padding-top: 10px;
+    padding-bottom: 15px;
+    color: #fff;
+    height: auto;
+}
+
+.navbar-brand:hover {
+    color: #fff;
+}
+
+.navbar-brand > h1 {
+    margin: 0;
+    display: inline-block;
+    font-size: 2.2rem;
+    font-weight: 400;
+}
+
+.collapsible-icon {
+    padding-top: 15px;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.header-nav {
+    margin-right: 10px;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+    /* padding-top: 12px;
+    padding-bottom: 12px; */
+}
+
+.navbar-default .navbar-nav>li>a> i {
+    font-size: 16px;
+}
+
+.ama-header .navbar-nav>.open>a,
+.ama-header .navbar-nav>.open>a:focus,
+.ama-header .navbar-nav>.open>a:hover {
+    color: #fff;
+    background-color: #004890;
+}
+
+.alerts-dropdown {
+    width: 350px;
+    padding-bottom: 0;
+}
+
+.alerts-dropdown > li.alert-item {
+    display: block;
+    padding: 5px 8px;
+    color: #333;
+    border-right: 5px solid #afafaf;
+    border-bottom: 1px dotted #afafaf;
+    margin-bottom: 1px;
+}
+
+.alerts-dropdown > li.alert-item:hover {
+    background-color: rgba(0,0,0,.1);
+}
+
+.alerts-dropdown > li.alert-item:last-child {
+    border-bottom: none;
+}
+
+.alerts-dropdown > li.alert-item.danger {
+    border-right-color: #d9534f;
+}
+
+.alerts-dropdown > li.alert-item.warning {
+    border-right-color: #f0ad4e;
+}
+
+.alerts-dropdown > li > .alert-heading {
+    overflow: hidden;
+    padding-bottom: 3px;
+}
+
+.alerts-dropdown > li > .alert-heading > .alert-title {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #092E5D;
+}
+
+.alerts-dropdown > li > .alert-heading > .alert-time {
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+.alerts-dropdown > li > .alert-body {
+    overflow: hidden;
+}
+
+.alerts-dropdown > li > .alert-body > p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.user-dropdown {
+    width: 180px;
+    padding-bottom: 0;
+}
