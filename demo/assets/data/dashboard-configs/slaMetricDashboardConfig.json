@@ -1,0 +1,82 @@
+{
+"pageTitle" : "SLA Metric Dasbhoard",
+"pageID" : "sla_metric_dashboard",
+"Filters" : [
+	{
+		"name":"Client",
+		"ID":"client",
+		"enabled":true,
+		"data" :[
+				{
+				"name" : "Client1",
+				"id" : "client1"
+				},
+				{
+				"name" : "Client2",
+				"id" : "client2"
+				},
+				{
+				"name" : "Client3",
+				"id" : "client3"
+				}
+			]
+	},
+	{
+		"name":"Apps",
+		"ID":"apps",
+		"enabled":true,
+		"data" :[
+				{
+				"name" : "App1",
+				"id" : "app1"
+				},
+				{
+				"name" : "App2",
+				"id" : "app2"
+				},
+				{
+				"name" : "App3",
+				"id" : "app3"
+				}
+			]
+	},
+	{
+		"name":"Business Line",
+		"ID":"businees_line",
+		"enabled":true,
+		"data" :[
+				{
+				"name" : "BL1",
+				"id" : "bl1"
+				},
+				{
+				"name" : "BL2",
+				"id" : "bl2"
+				}
+			]
+	},
+	{
+		"name":"Region",
+		"ID":"region",
+		"enabled":true,
+		"data" :[
+				{
+				"name" : "NA",
+				"id" : "na"
+				},
+				{
+				"name" : "Others",
+				"id" : "others"
+				}
+			]
+	}	
+],
+"datePicker": 
+{
+	"name" : "Current Date",
+	"ID" : "current_date",
+	"enabled" : true
+},
+"pageDataService": "http://localhost:3000/API/slaMetricData",
+"webSocketURL" :"http://lcoalhost:3005"
+}
